@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterView } from 'vue-router'
 import MainHeader from './components/MainHeader.vue'
 import MainFooter from './components/MainFooter.vue'
 </script>
@@ -6,7 +7,9 @@ import MainFooter from './components/MainFooter.vue'
 <template>
   <div id="app">
     <MainHeader />
-    <main></main>
+    <main>
+      <RouterView />
+    </main>
     <MainFooter />
   </div>
 </template>
@@ -17,7 +20,6 @@ import MainFooter from './components/MainFooter.vue'
   flex-direction: column;
   min-height: 100vh;
 }
-
 main {
   flex: 1;
 }

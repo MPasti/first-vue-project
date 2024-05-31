@@ -15,20 +15,32 @@
           <p>We are a company dedicated to providing the best services.</p>
         </div>
         <div class="footer-section">
-          <h3>Links</h3>
+          <h3>Atalhos</h3>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">Sobre</a></li>
+            <li><a href="services">Serviços</a></li>
+            <li><a href="contact">Contato</a></li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Nos siga nas redes sociais</h3>
           <ul class="socials">
-            <li><a href="#facebook">Facebook</a></li>
-            <li><a href="#twitter">Twitter</a></li>
-            <li><a href="#instagram">Instagram</a></li>
+            <li>
+              <a href="https://facebook.com" target="_blank">
+                <v-icon name="fa-facebook" class="icon" scale="2" />
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/" target="_blank"
+                ><v-icon name="fa-twitter" class="icon" scale="2"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/" target="_blank"
+                ><v-icon name="fa-instagram" class="icon" scale="2"
+              /></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -95,5 +107,9 @@
   margin-top: 2rem;
   border-top: 1px solid #777;
   padding-top: 1rem;
+}
+
+.socials li a:hover {
+  opacity: 0.8;
 }
 </style>

@@ -36,11 +36,15 @@ onMounted(() => {
 </script>
 
 <template>
+  <div class="background" />
   <main class="container">
     <h1 class="title">Produtos</h1>
     <div class="main-box">
       <div v-for="product in products" :key="product.id" class="product">
         <img :src="product.image" alt="product" width="200px" />
+        <div class="link">
+          <RouterLink to="http://127.0.0.1:5173/produtos/camisa"> Veja mais detalhes </RouterLink>
+        </div>
         <h4 class="title">{{ product.title }}</h4>
         <p>R$ {{ product.price.toFixed(2) }}</p>
       </div>
@@ -52,9 +56,19 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: -1;
+}
+
 .container {
   margin: auto;
-  min-height: 500px;
+  min-height: 300px;
   padding: 20px;
   width: 70%;
 }
@@ -70,12 +84,15 @@ onMounted(() => {
 }
 
 .product {
+  position: relative;
+  background-color: #fff;
   text-align: justify;
   padding: 10px;
-  border: 1px solid #ccc;
   box-sizing: border-box;
   align-content: space-around;
   transition: transform 0.2s ease;
+  border-radius: 4%;
+  box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product .title {
@@ -88,9 +105,45 @@ onMounted(() => {
   object-fit: scale-down;
 }
 
+.link {
+  display: none;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  background-color: #7ff3bf;
+  color: #f0f0f0;
+  text-decoration: none;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  width: auto;
+  height: 40px;
+}
+
 .product:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   cursor: pointer;
+}
+
+.product:hover .link {
+  display: flex;
+  animation: bounceInUp 0.5s forwards;
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @keyframes fadeIn {

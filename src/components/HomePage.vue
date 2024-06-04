@@ -1,8 +1,7 @@
-<script setup lang="ts"></script>
-
 <template>
   <main>
-    <div class="container background-vue alternative">
+    <div class="container background-white">
+      <div class="background-white-overlay"></div>
       <div class="main-box">
         <div class="column">
           <h1 class="home-title">Progressive</h1>
@@ -83,12 +82,26 @@
   margin: auto;
   justify-content: center;
   min-height: 500px;
+  position: relative;
+}
+
+.background-white-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.pexels.com/photos/1843717/pexels-photo-1843717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-attachment: fixed;
+  filter: brightness(90%);
+  z-index: -1;
 }
 
 .main-box {
   justify-content: center;
   align-items: center;
-  width: 40%;
+  margin: auto;
+  max-width: 70%;
   display: flex;
 }
 
@@ -116,10 +129,48 @@ span {
   filter: brightness(95%);
 }
 
+.background-white {
+  font-weight: bolder;
+}
+
 .home-title {
-  background: linear-gradient(315deg, #42d392 80%, #647eff);
+  font-size: 3rem;
+  background: linear-gradient(315deg, #65b792 70%, #6473be);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+@media (max-width: 850px) {
+  .main-box {
+    flex-direction: column;
+    max-width: 90%;
+  }
+  .container {
+    padding: 5rem;
+  }
+
+  img {
+    padding: 2rem;
+  }
+
+  .background-vue {
+    background-image: url('https://coreui.io/vue/docs/images/vue.jpg');
+    background-attachment: fixed;
+    filter: brightness(95%);
+    background-position: top;
+  }
+}
+
+@media (min-width: 1900px) {
+  .main-box {
+    max-width: 50%;
+  }
 }
 </style>

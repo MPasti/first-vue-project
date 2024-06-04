@@ -51,10 +51,11 @@ const toggleSidebar = () => {
       <li><RouterLink to="/contato">Contato</RouterLink></li>
     </ul>
     <hr />
-    <div class="flex-container leave">
+
+    <RouterLink to="/login" class="flex-container leave link">
       <v-icon name="ri-logout-box-line" class="icon" scale="1.5" />
       <h4>Sair</h4>
-    </div>
+    </RouterLink>
   </aside>
   <div v-if="isSidebarOpen" class="sidebar-overlay" @click="toggleSidebar"></div>
 </template>
@@ -138,5 +139,10 @@ hr {
 .leave {
   margin-top: auto;
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: #000;
 }
 </style>

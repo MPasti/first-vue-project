@@ -1,11 +1,9 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  $END$
+  <div>
+    <h1>Not Authorized</h1>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

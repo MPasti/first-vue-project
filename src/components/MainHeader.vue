@@ -34,7 +34,7 @@ const handleScroll = () => {
 
 window.addEventListener('scroll', handleScroll)
 
-const isSidebarOpen = ref(false)
+const isSidebarOpen = ref<boolean>(false)
 
 const toggleSidebar = () => {
   isSidebarOpen.value = !isSidebarOpen.value
@@ -77,6 +77,7 @@ const toggleSidebar = () => {
   transition:
     box-shadow 0.3s,
     transform 0.3s;
+  z-index: 998;
 }
 
 .is-scrolled {

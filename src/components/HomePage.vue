@@ -2,6 +2,34 @@
 
 <template>
   <main>
+    <div class="container background-vue alternative">
+      <div class="main-box">
+        <div class="column">
+          <h1 class="home-title">Progressive</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis doloribus
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias asperiores, assumenda
+            doloremque eligendi enim expedita fugiat iste laborum magni nobis porro qui quia quis
+            quod repellendus sed soluta unde. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Adipisci, blanditiis vitae. Animi deserunt dolorem eveniet ex facere, fugiat id in
+            labore laboriosam molestiae odit quos saepe sit tempore vel velit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container alternative">
+      <div class="main-box">
+        <img src="../assets/logo.svg" alt="idea" style="height: 300px; margin-right: 100px" />
+        <div class="column">
+          <h2>Teste</h2>
+          <p class="justified">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores exercitationem
+            harum quibusdam quis quod recusandae. At culpa explicabo magni pariatur quia
+            reprehenderit voluptates. Corporis dolore neque officia quam repellendus. Doloribus?
+          </p>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="main-box">
         <div class="column">
@@ -12,43 +40,39 @@
             obcaecati tempore? Deserunt nostrum pariatur sequi!
           </p>
           <br />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            <span>Asperiores exercitationem harum quibusdam quis quod recusandae.</span> At culpa
-            explicabo magni pariatur quia reprehenderit voluptates. Corporis dolore neque officia
-            quam repellendus. Doloribus? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            At corporis culpa
-            <span>dicta eos hic incidunt inventore minima nostrum possimus</span> recusandae
-            sapiente, sequi ullam unde veritatis voluptatibus? Distinctio ipsum officiis voluptatum.
-          </p>
+          <div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <span>Asperiores exercitationem harum quibusdam quis quod recusandae.</span> At culpa
+              explicabo magni pariatur quia reprehenderit voluptates. Corporis dolore neque officia
+              quam repellendus. Doloribus? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              At corporis culpa
+              <span>dicta eos hic incidunt inventore minima nostrum possimus</span> recusandae
+              sapiente, sequi ullam unde veritatis voluptatibus? Distinctio ipsum officiis
+              voluptatum.
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="container alternative">
-      <div class="main-box">
         <img
           src="https://static.vecteezy.com/system/resources/thumbnails/021/353/223/small_2x/light-bulb-with-rays-shine-energy-and-idea-symbol-icon-greeting-cards-prints-for-badges-posters-png.png"
           alt="idea"
-          style="height: 300px; margin-right: 100px"
         />
+      </div>
+    </div>
+    <div class="container background-vue alternative">
+      <div class="main-box">
         <div class="column">
-          <h2>Teste</h2>
+          <h1>Teste</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores exercitationem
-            harum quibusdam quis quod recusandae. At culpa explicabo magni pariatur quia
-            reprehenderit voluptates. Corporis dolore neque officia quam repellendus. Doloribus?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis doloribus
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias asperiores, assumenda
+            doloremque eligendi enim expedita fugiat iste laborum magni nobis porro qui quia quis
+            quod repellendus sed soluta unde. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Adipisci, blanditiis vitae. Animi deserunt dolorem eveniet ex facere, fugiat id in
+            labore laboriosam molestiae odit quos saepe sit tempore vel velit.
           </p>
         </div>
       </div>
-    </div>
-    <div class="container">
-      <h1></h1>
-    </div>
-    <div class="container background-vue">
-      <h1></h1>
-    </div>
-    <div class="container">
-      <h1></h1>
     </div>
   </main>
 </template>
@@ -89,5 +113,13 @@ span {
 .background-vue {
   background-image: url('https://coreui.io/vue/docs/images/vue.jpg');
   background-attachment: fixed;
+  filter: brightness(95%);
+}
+
+.home-title {
+  background: linear-gradient(315deg, #42d392 80%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 </style>

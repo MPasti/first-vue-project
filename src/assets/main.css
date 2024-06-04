@@ -14,3 +14,7 @@
 .flex-container{
   display: flex;
 }
+
+.justified {
+  text-align: justify;
+}

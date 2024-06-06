@@ -118,7 +118,6 @@ const toggleSidebar = () => {
 
 .sidebar ul li a {
   color: #333;
-  text-decoration: none;
 }
 
 .sidebar-overlay {
@@ -142,7 +141,6 @@ hr {
 }
 
 .link {
-  text-decoration: none;
   color: #000;
 }
 </style>

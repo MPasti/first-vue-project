@@ -12,15 +12,16 @@
         </div>
         <div class="footer-section">
           <h3>Sobre nós</h3>
-          <p>We are a company dedicated to providing the best services.</p>
+          <p>Os melhores produtos você encontra aqui!</p>
         </div>
         <div class="footer-section">
           <h3>Atalhos</h3>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="about">Sobre</a></li>
-            <li><a href="services">Serviços</a></li>
-            <li><a href="contact">Contato</a></li>
+            <li><a href="sobre">Sobre</a></li>
+            <li><a href="servicos">Serviços</a></li>
+            <li><a href="produtos">Produtos</a></li>
+            <li><a href="contato">Contato</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -96,7 +97,6 @@
 
 .footer-section ul li a {
   color: #fff;
-  text-decoration: none;
 }
 
 .footer-section ul li a:hover {

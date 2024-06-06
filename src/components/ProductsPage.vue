@@ -43,7 +43,7 @@ onMounted(() => {
       <div v-for="product in products" :key="product.id" class="product">
         <img :src="product.image" alt="product" width="200px" />
         <div class="link">
-          <RouterLink to="http://127.0.0.1:5173/produtos/camisa"> Veja mais detalhes </RouterLink>
+          <RouterLink to="produtos/camisa" class="none"> Veja mais detalhes </RouterLink>
         </div>
         <h4 class="title">{{ product.title }}</h4>
         <p>R$ {{ product.price.toFixed(2) }}</p>
@@ -68,7 +68,7 @@ onMounted(() => {
 
 .container {
   margin: auto;
-  min-height: 300px;
+  min-height: 500px;
   padding: 20px;
   width: 70%;
 }
@@ -113,15 +113,23 @@ onMounted(() => {
   transform: translate(-50%, -50%);
   justify-content: center;
   align-items: center;
-  background-color: #7ff3bf;
-  color: #f0f0f0;
-  text-decoration: none;
-  border: 1px solid #000000;
-  border-radius: 8px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 24px;
   padding: 10px;
   text-align: left;
   width: auto;
   height: 40px;
+}
+
+.link:hover {
+  background-color: #07c973;
+  transition: background-color 0.4s ease-in-out;
+}
+
+.none:visited {
+  text-decoration: none;
+  color: #fff;
 }
 
 .product:hover {

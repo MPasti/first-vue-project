@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+
+const ideaMainBox = ref(null)
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.text').forEach((text) => {
+            text.classList.add('animate')
+          })
+          entry.target.querySelector('.image')!.classList.add('animate')
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
+
+  if (ideaMainBox.value) {
+    observer.observe(ideaMainBox.value)
+  }
+})
+</script>
+
 <template>
   <main>
     <div class="container background-white">
@@ -30,17 +56,17 @@
       </div>
     </div>
     <div class="container">
-      <div class="main-box">
+      <div ref="ideaMainBox" class="main-box idea-main-box">
         <div class="column">
-          <h1>Teste</h1>
-          <p>
+          <h1 class="text">Teste</h1>
+          <p class="text">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis doloribus ea
             earum eveniet minus nihil nostrum sequi tempora velit. Deleniti deserunt doloribus eos
             obcaecati tempore? Deserunt nostrum pariatur sequi!
           </p>
           <br />
           <div>
-            <p>
+            <p class="text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               <span>Asperiores exercitationem harum quibusdam quis quod recusandae.</span> At culpa
               explicabo magni pariatur quia reprehenderit voluptates. Corporis dolore neque officia
@@ -53,6 +79,7 @@
           </div>
         </div>
         <img
+          class="image"
           src="https://static.vecteezy.com/system/resources/thumbnails/021/353/223/small_2x/light-bulb-with-rays-shine-energy-and-idea-symbol-icon-greeting-cards-prints-for-badges-posters-png.png"
           alt="idea"
         />
@@ -147,6 +174,35 @@ img {
   width: auto\9; /* ie8 */
 }
 
+.idea-main-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.text {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: transform 1.5s ease-in-out;
+}
+
+.text.animate {
+  visibility: visible;
+  transform: translateY(0);
+  animation: fadeIn 3s;
+}
+
+.image {
+  visibility: hidden;
+  transform: translateX(15%);
+  transition: transform 1.5s ease-in;
+}
+
+.image.animate {
+  visibility: visible;
+  transform: translateX(0);
+  animation: fadeIn 4s;
+}
+
 @media (max-width: 850px) {
   .main-box {
     flex-direction: column;
@@ -170,7 +226,17 @@ img {
 
 @media (min-width: 1900px) {
   .main-box {
-    max-width: 50%;
+    max-width: 100%;
+    padding: 0 24%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

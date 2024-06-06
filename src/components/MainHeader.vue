@@ -51,8 +51,8 @@ const toggleSidebar = () => {
       <nav>
         <ul>
           <li><RouterLink to="/sobre">Sobre</RouterLink></li>
-          <li><RouterLink to="/servicos">Serviços</RouterLink></li>
           <li><RouterLink to="/produtos">Produtos</RouterLink></li>
+          <li><RouterLink to="/servicos">Serviços</RouterLink></li>
           <li><RouterLink to="/contato">Contato</RouterLink></li>
         </ul>
       </nav>
@@ -110,7 +110,6 @@ nav ul {
 
 nav ul li a {
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
 }
 
@@ -183,7 +182,6 @@ nav ul li a:hover {
 
 .sidebar ul li a {
   color: #333;
-  text-decoration: none;
 }
 
 .sidebar-overlay {

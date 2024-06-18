@@ -8,6 +8,7 @@ import App from './App.vue'
 import { addIcons, OhVueIcon } from 'oh-vue-icons'
 import * as FaIcons from 'oh-vue-icons/icons/fa'
 import * as RiIcons from 'oh-vue-icons/icons/ri'
+import * as BiIcons from 'oh-vue-icons/icons/bi'
 import 'vue-toastification/dist/index.css'
 
 const options: PluginOptions = {
@@ -24,8 +25,11 @@ const options: PluginOptions = {
 
 const Fa = Object.values({ ...FaIcons })
 const Ri = Object.values({ ...RiIcons })
+const Bi = Object.values({ ...BiIcons })
+
 
 addIcons(...Fa)
 addIcons(...Ri)
+addIcons(...Bi)
 
 createApp(App).component('v-icon', OhVueIcon).use(Toast, options).use(router).mount('#app')

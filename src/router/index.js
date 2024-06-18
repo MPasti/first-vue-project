@@ -31,6 +31,12 @@ const router = createRouter({
       beforeEnter: isAuthenticated
     },
     {
+      path: '/contato',
+      name: 'Contato',
+      component: () => import('../components/ContactPage.vue'),
+      beforeEnter: isAuthenticated
+    },
+    {
       path: '/login',
       name: 'Login',
       component: () => import('../components/LoginPage.vue')

@@ -1,4 +1,28 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
+
+const ideaMainBox = ref(null)
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.text').forEach((text) => {
+            text.classList.add('animate')
+          })
+          entry.target.querySelector('.image')!.classList.add('animate')
+        }
+      })
+    },
+    { threshold: 0.1 }
+  )
+
+  if (ideaMainBox.value) {
+    observer.observe(ideaMainBox.value)
+  }
+})
+</script>
 
 <template>
   <main>

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { productService } from '@/services/products'
 import { onMounted, ref } from 'vue'
+import { useToast } from 'vue-toastification'
+import LoaderOverlay from '@/components/LoaderOverlay.vue'
+
+const toast = useToast();
 
 interface Product {
   id: number
@@ -22,9 +26,8 @@ async function getProdutos() {
   isLoading.value = true
   try {
     products.value = await productService.getProducts()
-    console.log('produtos', products)
   } catch (error) {
-    console.error(error)
+    toast.error('Erro ao carregar produtos');
   } finally {
     isLoading.value = false
   }
@@ -49,13 +52,11 @@ onMounted(() => {
         <p>R$ {{ product.price.toFixed(2) }}</p>
       </div>
     </div>
-    <div v-if="isLoading" class="sidebar-overlay">
-      <v-icon name="ri-loader-2-fill" class="icon" scale="10" animation="spin" color="white" />
-    </div>
+    <LoaderOverlay :loading="isLoading"/>
   </main>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .background {
   position: fixed;
   top: 0;
@@ -71,9 +72,10 @@ onMounted(() => {
   min-height: 500px;
   padding: 20px;
   width: 70%;
-}
-.container .title {
-  margin: 10px 0;
+
+  .title {
+    margin: 10px 0;
+  }
 }
 
 .main-box {
@@ -93,16 +95,17 @@ onMounted(() => {
   transition: transform 0.2s ease;
   border-radius: 4%;
   box-shadow: 1px 6px 12px rgba(0, 0, 0, 0.1);
-}
 
-.product .title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.product img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: scale-down;
+  .title {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: scale-down;
+  }
 }
 
 .link {
@@ -120,26 +123,31 @@ onMounted(() => {
   text-align: left;
   width: auto;
   height: 40px;
+
+  &:hover {
+    background-color: #07c973;
+    transition: background-color 0.4s ease-in-out;
+  }
 }
 
-.link:hover {
-  background-color: #07c973;
-  transition: background-color 0.4s ease-in-out;
-}
-
-.none:visited {
+.none {
   text-decoration: none;
   color: #fff;
+
+  &:visited {
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 .product:hover {
   transform: scale(1.03);
   cursor: pointer;
-}
 
-.product:hover .link {
-  display: flex;
-  animation: bounceInUp 0.5s forwards;
+  .link {
+    display: flex;
+    animation: bounceInUp 0.5s forwards;
+  }
 }
 
 @keyframes bounceInUp {
@@ -158,22 +166,10 @@ onMounted(() => {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 0.5s;
-}
 </style>
